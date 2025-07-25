@@ -15,5 +15,5 @@ Custogotchi runs on python3 and JSON, download the files and if you havent alrea
 If your a dev and want to mod it just open the downloaded folder on your IDE of choice
 
 ### Support 💻
-if you would like to support this project you can join the [discord server]()
+if you would like to support this project you can join the [discord server](https://discord.gg/uJfzZeznwE)
 
