@@ -199,7 +199,7 @@ class Fish:
         active += 10
         randomagres = rn.randint(1, 25)
         aggression - randomagres
-        print(f"{namer} has been fed, -{randomnum} hunger, +{randomnum} food, -{randomagres} aggresion!")
+        plugins.printdy(f"{namer} has been fed, -{randomnum} hunger, +{randomnum} food, -{randomagres} aggresion!")
 
     def play(self):
         ls = ["Mirror", "Laser", "TicTacToe"]
@@ -216,7 +216,7 @@ class Fish:
                 aggression = 100
             global active 
             active - 5  
-            print(f"{namer} has played with a Mirror! {aggression} aggression, {namer} has flared!")
+            plugins.printdy(f"{namer} has played with a Mirror! {aggression} aggression, {namer} has flared!")
 
         if choice == ['Laser']:
             rsd = rn.randint(1, 1000)
@@ -227,26 +227,26 @@ class Fish:
                 global vision
                 hunger += 10
                 vision = 0
-                print(f"The laser hit {namer}'s eyes! They are now blind and there current health is {health}!")
+                plugins.printdy(f"The laser hit {namer}'s eyes! They are now blind and there current health is {health}!")
 
             else:
                 aggression += 15
                 vision -= 1
                 active -= 10
                 hunger += 10
-                print(f"{namer} has played with a laser! activity level is now {active}.")
+                plugins.printdy(f"{namer} has played with a laser! activity level is now {active}.")
 
         if choice == ['TicTacToe']:
             aggression - 10
             active -= 5
             hunger += 5
-            print(f"{namer} has played tictactoe! its activity level is {active}")
+            plugins.printdy(f"{namer} has played tictactoe! its activity level is {active}")
 
     def Treat(self):
         if issick == True:
             if sicknessname == "ick":
-                print(f"Oh no! {namer} has ick! how would you like to treat him?")
-                print("1: IchX \n 2: High temp and salt bath \n 3: Ignore ")
+                plugins.printdy(f"Oh no! {namer} has ick! how would you like to treat him?")
+                plugins.printdy("1: IchX \n 2: High temp and salt bath \n 3: Ignore ")
                 chcc = input(": ")
                 if chcc == "1" or chcc == "ichx" or chcc == "IchX" or chcc == "Ichx":
                     if health < 100:
@@ -277,7 +277,7 @@ class Fish:
         anerobicgas - 10
         leftoverfood - 15
         chlorine = 0
-        print(f"Did a water change! {chlorine} chlorine, {pH} pH, {gH} gH, {kH} kH, {ammonia} ammonia, {nitrite} nitrite, {nitrate} nitrate, {anerobicgas} anerobic gas, {leftoverfood} leftover food ")
+        plugins.printdy(f"Did a water change! {chlorine} chlorine, {pH} pH, {gH} gH, {kH} kH, {ammonia} ammonia, {nitrite} nitrite, {nitrate} nitrate, {anerobicgas} anerobic gas, {leftoverfood} leftover food ")
 
                         
                     
@@ -315,13 +315,13 @@ class Fish:
             health - 15
         if pH > 7.9:
             health - 20
-            print("your pH is too high! do a water change")
+            plugins.printdy("your pH is too high! do a water change")
         if gH > 500:
             health - 5
-            print("Your gH is too high! do a water change")
+            plugins.printdy("Your gH is too high! do a water change")
         if kH > 60:
             aggression += 10
-            print(f"Your kH is irrating {namer}, do a water change or ignore ")
+            plugins.printdy(f"Your kH is irrating {namer}, do a water change or ignore ")
         cycles = 0
         fed = fed - hunger
         cycles += 1
@@ -329,37 +329,37 @@ class Fish:
             if ammonia > 0:
                 nitrite = ammonia -1
                 ammonia = 0
-                print("uh oh your ammonia has turned into nitrite! do a water change")
+                plugins.printdy("uh oh your ammonia has turned into nitrite! do a water change")
             if nitrite > 0:
                 nitrate = nitrite - 2
                 nitrite = 0
-                print("uh oh your nitrite has turned into nitrate! do a water change")
+                plugins.printdy("uh oh your nitrite has turned into nitrate! do a water change")
             cycles = 0
             ager += 1
-            print(f"{namer} is now {ager}!")
+            plugins.printdy(f"{namer} is now {ager}!")
         if tanksizer < 4.9:
             health = 0
-            print("DONT KEEP BETTAS IN LOWER THAN 5 GALLONS!! :(")
+            plugins.printdy("DONT KEEP BETTAS IN LOWER THAN 5 GALLONS!! :(")
             quit("bad fishkeeper :(")
         if ager == 5 or ager > 5:
-            print(f"{namer} is getting old :(")
+            plugins.printdy(f"{namer} is getting old :(")
         if hunger > 70:
-            print(f"{namer} is hungry! Please feed it")
+            plugins.printdy(f"{namer} is hungry! Please feed it")
         if hunger > 120:
             plugins.cleancnsl()
-            print(f"{namer} has died of starvation :(")
+            plugins.printdy(f"{namer} has died of starvation :(")
             quit("Dead :(")
         if ager > 7:
-            print(f"{namer} has died of old age :(")
+            plugins.printdy(f"{namer} has died of old age :(")
             quit("Dead :(")
         if active > 75 and active < 90:
             boredom += active / 2
-            print(f"{namer} is very bored! play with him!")
+            plugins.printdy(f"{namer} is very bored! play with him!")
         if health < 50:
-            print(f"{namer} is hurt or sick! Treat him.")
+            plugins.printdy(f"{namer} is hurt or sick! Treat him.")
         if health < 0 or health == 0:
             plugins.cleancnsl()
-            print(f"{namer} has died due to low health :(")
+            plugins.printdy(f"{namer} has died due to low health :(")
             quit("Dead :(")
         hunger += 1
         aggression -= 2
@@ -368,11 +368,11 @@ class Fish:
         global anerobicgas
         if fed > 140:
             health - 20
-            print(f"{namer} is bloated! please stop feeding them and play with them more!")
+            plugins.printdy(f"{namer} is bloated! please stop feeding them and play with them more!")
         if fed > 180:
             health = 0
             plugins.cleancnsl()
-            print(f"{namer} has died of overfeeding :(")
+            plugins.printdy(f"{namer} has died of overfeeding :(")
             quit("Dead :(")
         if aggression > 100:
             hunger += 10
@@ -389,10 +389,10 @@ class Fish:
         chh = rn.choice(colours)
         colours = [96, 91, 92, 93, 94, 95, 1, 4]
         chh2 = rn.choice(colours)
-        clr = plugins.colour_text("CUSTOGOTCHI V1 BETA", chh)
-        print(clr)
-        cls2 = plugins.colour_text(" 1: Play \n 2: Feed \n 3: Water Change", chh2)
-        print(cls2)
+        clr = "CUSTOGOTCHI V1 BETA"
+        plugins.printdy(clr)
+        cls2 = " 1: Play \n 2: Feed \n 3: Water Change"
+        plugins.printdy(cls2)
         option = input("Your Option: ")
         if option in "play" or option in "Play" or option in "1":
             self.play()
@@ -409,6 +409,7 @@ class Fish:
             self.waterchange()
             tm.sleep(1)
             self.update()
-
+        
+        
 
 

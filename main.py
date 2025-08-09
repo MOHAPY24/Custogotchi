@@ -7,8 +7,8 @@ import plugins
 def main():
     colours = [96, 91, 92, 93, 94, 95, 1, 4]
     chh1 = rn.choice(colours)
-    cals1 = plugins.colour_text("Build Your Betta!!", chh1)
-    print(cals1)
+    cals1 = "Build Your Betta!!"
+    plugins.printdy(cals1)
     amm = input("Name your betta: ")
     agg = input("Whats your bettas age?: ")
     agg = int(agg)
